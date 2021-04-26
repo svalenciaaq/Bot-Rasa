@@ -1,0 +1,7 @@
+rules:
+  - rule: Preguntar al usuario cuando mande un mensaje con baja conficencia
+    steps:
+    - intent: nlu_fallback
+    - action: utter_please_rephrase      
+
+

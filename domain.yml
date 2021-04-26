@@ -1,0 +1,50 @@
+version: "2.0"
+
+intents:
+  - saludo
+  - pedir_una_cita
+  - despido
+  - afirmacion_de_cita
+  - dia_cita
+  - hora_cita
+
+
+
+entities:
+  - date
+  - time
+  - dr
+  - site
+  - specialist
+  - day
+  - hour
+
+# forms:
+#   cita_form:
+#       site:
+#       - type: from_entity
+#         entity: site
+#       day:
+#       - type: text
+#       hour:
+#       - type: text
+
+responses:
+  utter_saludo:
+  - text: "Hola,en que te puedo ayudar"
+  - text: "En que te puedo ayudar"
+
+  utter_dia_cita:
+  - text: "Claro,que dia quisiera agendarla"
+
+  utter_hora_cita:
+  - text: "A que hora quisiera agendarla"
+
+
+  utter_please_rephrase:
+  - text: "Lo siento, no entendi lo que dijistes. Podrias repetirlo?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
