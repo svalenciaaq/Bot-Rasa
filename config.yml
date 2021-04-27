@@ -29,11 +29,7 @@ pipeline:
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
-- name : MemoizationPolicy
-max_history: 3
-- name : KerasPolicy
-- name : MappingPolicy
-- name : FallbackPolicy
-nlu_threshold: 0.5
-core_threshold: 0.5
-fallback_action_name: " my_fallback_action "
+  - name : MemoizationPolicy
+    max_history: 3
+  - name : MappingPolicy
+

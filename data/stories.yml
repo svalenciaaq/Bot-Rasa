@@ -6,9 +6,17 @@ stories:
   steps:
   - intent: saludo
   - action: utter_saludo
+  - action: prueba_action
   - intent: pedir_una_cita
   - action: utter_dia_cita
   - intent: dia_cita
   - action: utter_hora_cita
   - intent: hora_cita
 
+# - story: request_first
+#     steps:
+#     - intent: request
+#     - action: utter_request
+#     - intent: dia_cita
+#     - action: utter_dia_cita
+      

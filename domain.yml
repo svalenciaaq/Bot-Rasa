@@ -7,7 +7,11 @@ intents:
   - afirmacion_de_cita
   - dia_cita
   - hora_cita
+  - request
 
+
+actions:
+  - prueba_action
 
 
 entities:
@@ -43,6 +47,9 @@ responses:
 
   utter_please_rephrase:
   - text: "Lo siento, no entendi lo que dijistes. Podrias repetirlo?"
+
+  utter_request:
+  - text: "Claro, que dia quisiera agendarla"
 
 
 session_config:

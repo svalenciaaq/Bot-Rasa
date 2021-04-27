@@ -8,7 +8,9 @@ nlu:
     - Buenas tardes
     - Buenas noches
     - hola
-    -¿Buenos Días, me podría ayudar agendando una cita?
+- intent: request
+  examples: |
+    ¿Buenos Días, me podría ayudar agendando una cita?
     -¿Buenos Días, me podría ayudar con una cita?
     -¿Necesito una cita me puede ayudar?
     -Hágame un favor, necesito una cita. ¿Me puede colaborar?
@@ -59,7 +61,12 @@ nlu:
 
 - intent: hora_cita
   examples: |
-    - Quisiera agendar una cita a las 2 pm
+    - 1 de la tarde
+    - 2 de la tarde
+    - 3 de la tarde
+    - 4 de la tarde
+    - 5 de la tarde
+
 
 - intent: Despido
   examples: |
@@ -71,6 +78,7 @@ nlu:
   examples: |
     - Claro
     - Eso suena bien
+    - Si
 - intent: out_of_scope
   examples: |
     -
