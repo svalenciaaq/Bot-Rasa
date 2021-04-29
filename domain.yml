@@ -23,15 +23,17 @@ entities:
   - day
   - hour
 
-# forms:
-#   cita_form:
-#       site:
-#       - type: from_entity
-#         entity: site
-#       day:
-#       - type: text
-#       hour:
-#       - type: text
+slots:
+  user_name:
+    type: unfeaturized
+  dni_user: 
+    type: unfeaturized
+  day: 
+    type: unfeaturized
+  hour: 
+    type: unfeaturized
+  doctor:
+    type: unfeaturized        
 
 responses:
   utter_saludo:
@@ -51,7 +53,27 @@ responses:
   utter_request:
   - text: "Claro, que dia quisiera agendarla"
 
+  utter_affirmation:
+  - text: "Su cita fue confirmada"
+
+  utter_hora_confirmacion:
+  - text: "su cita fue confirmada" 
+
+  utter_ask_user_name:
+  - text: Cual es tu nombre?
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+forms:
+  cita_form:
+    site:
+      - type: from_entity
+        entity: site
+    day:
+      - type: from_entity
+        entity: day
+    hour: 
+      - type: from_entity
+        entity: hour

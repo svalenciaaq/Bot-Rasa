@@ -7,7 +7,9 @@ nlu:
     - Buenos dias
     - Buenas tardes
     - Buenas noches
-    - hola
+  
+
+    
 - intent: request
   examples: |
     ¿Buenos Días, me podría ayudar agendando una cita?
@@ -45,40 +47,80 @@ nlu:
   examples: |
     - Quisiera agendar una cita
     - Quisiera pedir una cita
-    - Quiesiera agendar una cita
+    - Para agendar una cita
+    - ¿Necesito una cita me puede ayudar?
+    - Hágame un favor, necesito una cita. ¿Me puede colaborar?
+    - Hágame un favor, necesito una cita. ¿Me puede ayudar?
+    - Buenos Días, es para sacar una cita. ¿Me puede ayudar?
+    - Mi (parentezco) necesita una cita, ¿Me puede colaborar?
+    - Necesito una cita de (Especialidad), ¿Me puede ayudar agendándola?
+    - ¿Tienes citas de (Especialidad)?
+    - ¿Hay agenda para (Especialidad)?
+    - ¿Tiene citas con el/la dr/dra (Nombre del Doctor)?
+    - ¿Tiene cita de (Especialidad) con el/la dr/dra (Nombre de Doctor)?
+    - ¿Tiene cita de (Especialidad) con el/la dr/dra (Nombre del Doctor para el día (fecha)?
+    - Necesito una cita para el día (fecha), ¿Me puede ayudar?
+    - ¿Tiene cita de (Especialidad) para la sede (X)?
+    - ¿Puedo sacar una cita médica con usted?
+    - Me siento muy mal, necesito ver al médico me puede ayudar con una cita médica por favor
+    - Necesito una cita prioritaria, ¿Me puede colaborar?
+    - ¿Tiene citas prioritarias?
+    - Mi (parentezco) me pidió sacarle una cita, ¿Me puede colaborar?
+    - ¿Cómo puedo solicitar una cita médica?
+    - ¿Por este medio puedo solicitar citas médicas?
+    - Señorita su ayuda agendándome una cita médica
+    - Niña necesito sacar una cita médica su ayuda por favor
+    - ¿Con quién puedo hablar para agendar una cita?
+    - Puede validar si hay agenda en (Especialidad)
+    - Me indicaron que por este medio puedo solicitar mis citasmédicas, ¿Es verdad?
+    - ¿Cómo es el proceso para solicitar citas por este medio?
+    - Una cita médica por favor
+
 
 
 
 - intent: dia_cita
   examples: |
-    - [lunes]{"entity" : "dia_citas" ,  "value" :"lunes"}
-    - [martes]{"entity": "dia_citas", "value": "martes"}
-    - [miercoles]{"entity": "dia_citas", "value": "miercoles"}
-    - [jueves]{"entity": "dia_citas", "value": "jueves"}
-    - [viernes]{"entity" :  "dia_citas", "value": "viernes"}
+    - [lunes]{"entity" : "day" ,  "value" :"lunes"}
+    - [martes]{"entity": "day", "value": "martes"}
+    - [miercoles]{"entity": "day", "value": "miercoles"}
+    - [jueves]{"entity": "day", "value": "jueves"}
+    - [viernes]{"entity" :  "day", "value": "viernes"}
 
 
 
 - intent: hora_cita
   examples: |
-    - 1 de la tarde
-    - 2 de la tarde
-    - 3 de la tarde
-    - 4 de la tarde
-    - 5 de la tarde
-
-
+    - [1](hour) de la tarde
+    - [2](hour) de la tarde
+    - [3](hour) de la tarde
+    - [4](hour) de la tarde
+    - [5](hour) de la tarde
+    - [12](hour) de la tarde
+    - [11](hour) de la mañana
+    - [10](hour) de la mañana
+    - [9](hour) de la mañana
+    - [8](hour) de la mañana
+    - [7](hour) de la mañana
+    - [6](hour) de la mañana
+    
 - intent: Despido
   examples: |
     - Muchas gracias, hasta luego
     - Gracias, Hasta luego
     - Adios, Muchas gracias
     - Muy amable, Hasta luego
+
+
+
 - intent: Afirmacion
   examples: |
     - Claro
     - Eso suena bien
     - Si
+
+
+
 - intent: out_of_scope
   examples: |
     -

@@ -1,7 +1,15 @@
-rules:
-  - rule: Preguntar al usuario cuando mande un mensaje con baja conficencia
-    steps:
-    - intent: nlu_fallback
-    - action: utter_please_rephrase      
+# rules:
+#   - rule: activate cita forms
+#     steps:
+#       - intent: pedir_una_cita
+#       - action: cita_form
+#       - active_loop: cita_form
 
-
+#     - rule: submit form
+#       condition:
+#       - active_loop: cita_form
+#         steps:
+#           - action: cita_form
+#           - active_loop: null
+#           - action: utter_submit
+#          - action: utter_slots_values
