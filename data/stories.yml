@@ -6,24 +6,22 @@ stories:
   steps:
   - intent: saludo
   - action: utter_saludo
-  - action: prueba_action
   - intent: pedir_una_cita
-  - action: utter_dia_cita
   - intent: dia_cita
-  - action: utter_hora_cita
+  - action: prueba_action
   - intent: hora_cita
-  - intent: afirmacion
+  - intent: Afirmacion
   - action: utter_affirmation
 
 
-- story: request_first
-  steps:
-  - intent: request
-  - action: utter_request
-  - intent: dia_cita
-  - action: utter_hora_cita
-  - intent: hora_cita
-  - action: utter_hora_confirmacion
-  - intent: afirmacion
-  - action: utter_affirmation
-      
+# - story: request_first
+#   steps:
+#   - intent: request
+#   - action: utter_request
+#   - intent: dia_cita
+#   - action: utter_hora_cita
+#   - intent: hora_cita
+#   - action: utter_hora_confirmacion
+#   - intent: Afirmacion
+#   - action: utter_affirmation
+

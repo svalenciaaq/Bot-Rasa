@@ -12,42 +12,8 @@ nlu:
     
 - intent: request
   examples: |
-    ¿Buenos Días, me podría ayudar agendando una cita?
-    -¿Buenos Días, me podría ayudar con una cita?
-    -¿Necesito una cita me puede ayudar?
-    -Hágame un favor, necesito una cita. ¿Me puede colaborar?
-    -Hágame un favor, necesito una cita. ¿Me puede ayudar?
-    -Buenos Días, es para sacar una cita. ¿Me puede ayudar?
-    - Mi (parentezco) necesita una cita, ¿Me puede colaborar?
-    - Necesito una cita de (Especialidad), ¿Me puede ayudar agendándola?
-    - ¿Tienes citas de (Especialidad)?
-    - ¿Hay agenda para (Especialidad)?
-    - ¿Tiene citas con el/la dr/dra (Nombre del Doctor)?
-    - ¿Tiene cita de (Especialidad) con el/la dr/dra (Nombre de Doctor)?
-    - ¿Tiene cita de (Especialidad) con el/la dr/dra (Nombre del Doctor para el día (fecha)?
-    - Necesito una cita para el día (fecha), ¿Me puede ayudar?
-    - ¿Tiene cita de (Especialidad) para la sede (X)?
-    - ¿Puedo sacar una cita médica con usted?
-    - Me siento muy mal, necesito ver al médico me puede ayudar con una cita médica por favor
-    - Necesito una cita prioritaria, ¿Me puede colaborar?
-    - ¿Tiene citas prioritarias?
-    - Mi (parentezco) me pidió sacarle una cita, ¿Me puede colaborar?
-    - ¿Cómo puedo solicitar una cita médica?
-    - ¿Por este medio puedo solicitar citas médicas?
-    - Señorita su ayuda agendándome una cita médica
-    - Niña necesito sacar una cita médica su ayuda por favor
-    - ¿Con quién puedo hablar para agendar una cita?
-    - Puede validar si hay agenda en (Especialidad)
-    - Me indicaron que por este medio puedo solicitar mis citasmédicas, ¿Es verdad?
-    - ¿Cómo es el proceso para solicitar citas por este medio?
-    - Una cita médica por favor
-
-
-- intent: pedir_una_cita
-  examples: |
-    - Quisiera agendar una cita
-    - Quisiera pedir una cita
-    - Para agendar una cita
+    - ¿Buenos Días, me podría ayudar agendando una cita?
+    - ¿Buenos Días, me podría ayudar con una cita?
     - ¿Necesito una cita me puede ayudar?
     - Hágame un favor, necesito una cita. ¿Me puede colaborar?
     - Hágame un favor, necesito una cita. ¿Me puede ayudar?
@@ -77,15 +43,13 @@ nlu:
     - Una cita médica por favor
 
 
-
-
 - intent: dia_cita
   examples: |
-    - [lunes]{"entity" : "day" ,  "value" :"lunes"}
-    - [martes]{"entity": "day", "value": "martes"}
-    - [miercoles]{"entity": "day", "value": "miercoles"}
-    - [jueves]{"entity": "day", "value": "jueves"}
-    - [viernes]{"entity" :  "day", "value": "viernes"}
+    - [lunes](day)
+    - [martes](day)
+    - [miercoles](day)
+    - [jueves](day)
+    - [viernes](day)
 
 
 
@@ -123,4 +87,5 @@ nlu:
 
 - intent: out_of_scope
   examples: |
-    -
+
+

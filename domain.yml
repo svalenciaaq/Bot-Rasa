@@ -4,10 +4,11 @@ intents:
   - saludo
   - pedir_una_cita
   - despido
-  - afirmacion_de_cita
+  - Afirmacion
   - dia_cita
   - hora_cita
   - request
+  - Despido
 
 
 actions:
@@ -25,15 +26,15 @@ entities:
 
 slots:
   user_name:
-    type: unfeaturized
+    type: text
   dni_user: 
-    type: unfeaturized
+    type: text
   day: 
-    type: unfeaturized
+    type: text
   hour: 
-    type: unfeaturized
+    type: text
   doctor:
-    type: unfeaturized        
+    type: text        
 
 responses:
   utter_saludo:
@@ -61,6 +62,12 @@ responses:
 
   utter_ask_user_name:
   - text: Cual es tu nombre?
+
+  utter_submit:
+  - text: "Esta bien, Gracias"
+
+  utter_slots_values:
+  - text: "Te recordare tu nombre es {user_name}"
 
 session_config:
   session_expiration_time: 60
