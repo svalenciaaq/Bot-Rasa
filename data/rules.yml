@@ -1,14 +1,14 @@
 - rule: Activate form
   steps:
-  - intent: request_names
-  - action: name_form
-  - active_loop: name_form
+  - intent: request_cita
+  - action: cita_form
+  - active_loop: cita_form
 
 - rule: Submit form
   condition:
-  - active_loop: name_form
+  - active_loop: cita_form
   steps:
-  - action: name_form
+  - action: cita_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null

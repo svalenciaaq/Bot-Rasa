@@ -2,13 +2,14 @@ version: "2.0"
 
 intents:
   - saludo
-  - pedir_una_cita
   - despido
   - Afirmacion
   - dia_cita
   - hora_cita
-  - request
+  - request_cita
   - Despido
+  - inform_username
+  - inform_dniuser
 
 
 actions:
@@ -23,18 +24,24 @@ entities:
   - specialist
   - day
   - hour
+  - username
+  - dniuser
 
 slots:
-  user_name:
+  username:
     type: text
-  dni_user: 
+    influence_conversation: false
+  dniuser: 
     type: text
+    influence_conversation: false
   day: 
     type: text
   hour: 
     type: text
   doctor:
-    type: text        
+    type: text
+  site:
+    type: text          
 
 responses:
   utter_saludo:
@@ -60,14 +67,17 @@ responses:
   utter_hora_confirmacion:
   - text: "su cita fue confirmada" 
 
-  utter_ask_user_name:
+  utter_ask_username:
   - text: Cual es tu nombre?
+
+  utter_ask_dniuser:
+  - text: Cual es su numero de identificacion?
 
   utter_submit:
   - text: "Esta bien, Gracias"
 
   utter_slots_values:
-  - text: "Te recordare tu nombre es {user_name}"
+  - text: "Te recordare tu nombre es {username}"
 
 session_config:
   session_expiration_time: 60
@@ -75,12 +85,7 @@ session_config:
 
 forms:
   cita_form:
-    site:
-      - type: from_entity
-        entity: site
-    day:
-      - type: from_entity
-        entity: day
-    hour: 
-      - type: from_entity
-        entity: hour
+    username:
+      - type: from_text
+    dniuser:
+      - type: from_text

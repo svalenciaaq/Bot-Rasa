@@ -28,7 +28,7 @@ pipeline:
 
 
 - name: SpacyNLP
-  model: "es_core_news_sm"
+  model: "es_core_news_lg"
 - name: SpacyTokenizer
 - name: SpacyFeaturizer
 - name: RegexFeaturizer

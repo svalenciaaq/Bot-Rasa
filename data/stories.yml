@@ -2,16 +2,20 @@ version: "2.0"
 
 stories:
 
-- story: hello_path
+- story: cita_request
   steps:
   - intent: saludo
   - action: utter_saludo
-  - intent: pedir_una_cita
-  - intent: dia_cita
-  - action: prueba_action
-  - intent: hora_cita
-  - intent: Afirmacion
-  - action: utter_affirmation
+  - intent: request_cita
+  - action: cita_form
+  - active_loop: cita_form
+  - active_loop:  null
+  - action: utter_slots_values
+  # - intent: dia_cita
+  # - action: prueba_action
+  # - intent: hora_cita
+  # - intent: Afirmacion
+  # - action: utter_affirmation
 
 
 # - story: request_first

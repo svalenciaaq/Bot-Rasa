@@ -10,7 +10,7 @@ nlu:
   
 
     
-- intent: request
+- intent: request_cita
   examples: |
     - ¿Buenos Días, me podría ayudar agendando una cita?
     - ¿Buenos Días, me podría ayudar con una cita?
@@ -50,6 +50,11 @@ nlu:
     - [miercoles](day)
     - [jueves](day)
     - [viernes](day)
+    - Estaria bien el [lunes](day)
+    - Estaria bien el [martes](day)
+    - Estaria bien el [miercoles](day)
+    - Estaria bien el [jueves](day)
+    - Estaria bien el [viernes](day)
 
 
 
@@ -67,6 +72,10 @@ nlu:
     - [8](hour) de la mañana
     - [7](hour) de la mañana
     - [6](hour) de la mañana
+    - estaria bien a las (9)[hour] de la mañana
+    - estaria bien a las (10)[hour] de la mañana
+    - estaria bien a las (11)[hour] de la mañana
+    - estaria bien a las (12)[hour] de la tarde
     
 - intent: Despido
   examples: |
@@ -88,4 +97,45 @@ nlu:
 - intent: out_of_scope
   examples: |
 
+
+- intent: inform_username
+  examples: |
+    - Mi nombre es (Santiago)[username]
+    - Me llamo (Andres)[username]
+    - Me llamo (Martin)[username]
+    - Mi nombre es (juana)[username]
+    - Mi nombre es (Liliana)[username]
+    - Mi nombre es (Andresa)[username]
+    - (Sebastian)[username]
+    - (Daniel)[username]
+    - (Claudia)[username]
+    - (Valentina)[username]
+    - (Alexandra)[username]
+    - (Camilo)[username]
+    - (Camila)[username]
+    - Mi nombre es (Camilo)[username]
+    - Mi nombre es (Camila)[username]
+    - (Santiago)[username]
+    - (Andres)[usernane]
+    - Me llamo (julio)[username]
+    - (Catalina)[username]
+    - (Adolfo)[username]
+    - (Brain)[username]
+    - (Alonso)[username]
+    - (Arturo)[username]
+    - (Braulio)[username]
+    - (Cesar)[username]
+    - (Diego)[username]
+    - (David)[username]
+    - (Dario)[username]
+    - (Edgar)[username]
+    - (Esteban)[username]
+    - (Felipe)[username]
+    
+
+- intent: inform_dniuser
+  examples: |
+    - Mi identificacion es (1214746404)[dniuser]
+    - Mi numero de identificacion es (745221087)[dniuser]
+    - Mi identificacion es (2565781580)[dniuser]     
 
