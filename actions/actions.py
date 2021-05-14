@@ -12,6 +12,8 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 import json
+
+
 class ActionHelloWorld(Action):
 
     def name(self) -> Text:
@@ -26,29 +28,91 @@ class ActionHelloWorld(Action):
         return []
 
 
-class prueba_action(Action):
+class Actionrecievedni(Action):
     def name(self) -> Text:
-        return "prueba_action"
+        return "action_ask_dniuser"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        
+        dispatcher.utter_message(text="Cual es tu numero de identificacion")
+      
+        return []
+
+
+
+class ActionReceiveDay(Action):
+    def name(self) -> Text:
+        return "action_ask_day"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         Database.inititialize()
-        entities =  tracker.latest_message['entities']
-        print(entities)
 
-        
-        data = {
-            "president" : "xd",
-            "lol" : "prueba"
+
+        slot = tracker.get_slot("dniuser")
+
+        month =  slot[0]
+
+        query ={
+            "month" : month
         }
-        Database.insert("citas",data )
-        dispatcher.utter_message(text="xd")
+        result = Database.find_one("users", query)
+
       
         return []
 
 
+class ActionReceiveHour(Action):
+    def name(self) -> Text:
+        return "action_ask_hour"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        Database.inititialize()
+     
+        dispatcher.utter_message(text="El dia que elegiste:" )
+
+        dispatcher.utter_message(text="Los horarios disponibles son:" + "12:00" + "13:00" + "15:00")
+      
+        return []
+
+
+
+class ActionReceiveMonth(Action):
+    def name(self) -> Text:
+        return "action_ask_month"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        slot = tracker.get_slot("dniuser")
+
+        dni= int(slot[0])
+
+        print(type(dni))
+
+        print(dni)   
+        Database.inititialize()
+
+
+        query ={
+            "dni_user" : dni
+        }
+        result = Database.find_one("users", query)
+
+        userName=  result['firstname']
+        print(userName)
+        dispatcher.utter_message(text="Tu nombre es " + userName)
+        dispatcher.utter_message(text="Que mes quisiera la cita")
+        return []
 
 
 class Database(object):
@@ -58,8 +122,7 @@ class Database(object):
     @staticmethod
     def inititialize():
         client = pymongo.MongoClient(Database.URI)
-        print(client)
-        Database.DATABASE = client['prueba']
+        Database.DATABASE = client['Users']
 
     @staticmethod
     def insert(collection, data):

@@ -1,0 +1,41 @@
+{
+  "dni_user": {
+    "precision": 0.6666666666666666,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6666666666666666,
+    "support": 3,
+    "confused_with": {}
+  },
+  "hour": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "day": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 367,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.6666666666666666,
+    "recall": 0.005235602094240838,
+    "f1-score": 0.010389610389610391,
+    "support": 382
+  },
+  "macro avg": {
+    "precision": 0.2222222222222222,
+    "recall": 0.2222222222222222,
+    "f1-score": 0.2222222222222222,
+    "support": 382
+  },
+  "weighted avg": {
+    "precision": 0.005235602094240838,
+    "recall": 0.005235602094240838,
+    "f1-score": 0.005235602094240838,
+    "support": 382
+  }
+}

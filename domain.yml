@@ -13,8 +13,11 @@ intents:
 
 
 actions:
-  - prueba_action
-
+  - response_action
+  - action_ask_dniuser
+  - action_ask_month
+  - action_ask_day
+  - action_ask_hour
 
 entities:
   - date
@@ -25,7 +28,8 @@ entities:
   - day
   - hour
   - username
-  - dniuser
+  - dni_user
+  - month_date
 
 slots:
   username:
@@ -36,12 +40,20 @@ slots:
     influence_conversation: false
   day: 
     type: text
+    influence_conversation: false
   hour: 
     type: text
+    influence_conversation: false
   doctor:
     type: text
+    influence_conversation: false
   site:
-    type: text          
+    type: text
+    influence_conversation: False
+  month:
+    type: text
+    influence_conversation: False
+                
 
 responses:
   utter_saludo:
@@ -67,12 +79,6 @@ responses:
   utter_hora_confirmacion:
   - text: "su cita fue confirmada" 
 
-  utter_ask_username:
-  - text: Cual es tu nombre?
-
-  utter_ask_dniuser:
-  - text: Cual es su numero de identificacion?
-
   utter_submit:
   - text: "Esta bien, Gracias"
 
@@ -85,7 +91,19 @@ session_config:
 
 forms:
   cita_form:
-    username:
-      - type: from_text
     dniuser:
-      - type: from_text
+      - type: from_entity
+        entity: dni_user
+        intent:  [inform_dniuser]
+    month:
+      - type: from_entity
+        entity: month_date   
+    day:
+      - type: from_entity
+        entity: day
+    hour:
+      - type: from_entity
+        entity: hour
+
+
+     

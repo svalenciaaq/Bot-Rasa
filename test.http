@@ -1,0 +1,43 @@
+POST http://localhost:5005/webhooks/rest/webhook HTTP/1.1
+Content-Type: application/json
+
+
+{
+     "sender": "user_s",
+    "message": "Hola"
+}
+
+###
+
+POST http://localhost:5005/webhooks/rest/webhook HTTP/1.1
+Content-Type: application/json
+
+
+{
+     "sender": "user_s",
+    "message": "Quisiera agendar una cita"
+}
+
+
+### 
+
+POST http://localhost:5005/webhooks/rest/webhook HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "sender": "user_s",
+    "message": "Mi numero de identificacion es 1214746404"
+}
+
+
+### 
+
+POST http://localhost:5005/webhooks/rest/webhook HTTP/1.1
+Content-Type: application/json
+
+
+{
+     "sender": "user_s",
+    "message": "Mi numero de identificacion es 1214746404"
+}

@@ -1,5 +1,11 @@
 version: "2.0"
 nlu:
+
+- regex: dni_user
+  examples: |
+    - \d{10,12}
+
+
 - intent: saludo
   examples: |
     - Hola
@@ -7,7 +13,6 @@ nlu:
     - Buenos dias
     - Buenas tardes
     - Buenas noches
-  
 
     
 - intent: request_cita
@@ -54,7 +59,366 @@ nlu:
     - Estaria bien el [martes](day)
     - Estaria bien el [miercoles](day)
     - Estaria bien el [jueves](day)
-    - Estaria bien el [viernes](day)
+    - Estaria bien el [1](day) de abril
+    - Estaria bien el [2](day) de abril
+    - Estaria bien el [3](day) de abril
+    - Estaria bien el [4](day) de abril 
+    - Estaria bien el [5](day) de abril
+    - Estaria bien el [6](day) de abril
+    - Estaria bien el [7](day) de abril
+    - Estaria bien el [8](day) de abril
+    - Estaria bien el [9](day) de abril
+    - Estaria bien el [10](day) de abril
+    - Estaria bien el [11](day) de abril
+    - Estaria bien el [12](day) de abril
+    - Estaria bien el [13](day) de abril
+    - Estaria bien el [14](day) de abril
+    - Estaria bien el [15](day) de abril
+    - Estaria bien el [16](day) de abril
+    - Estaria bien el [17](day) de abril
+    - Estaria bien el [18](day) de abril
+    - Estaria bien el [19](day) de abril
+    - Estaria bien el [20](day) de abril
+    - Estaria bien el [21](day) de abril
+    - Estaria bien el [22](day) de abril
+    - Estaria bien el [23](day) de abril
+    - Estaria bien el [24](day) de abril
+    - Estaria bien el [25](day) de abril
+    - Estaria bien el [26](day) de abril
+    - Estaria bien el [27](day) de abril
+    - Estaria bien el [28](day) de abril
+    - Estaria bien el [29](day) de abril
+    - Estaria bien el [30](day) de abril
+    - Estaria bien el [1](day) de Enero
+    - Estaria bien el [2](day) de Enero
+    - Estaria bien el [3](day) de Enero
+    - Estaria bien el [4](day) de Enero 
+    - Estaria bien el [5](day) de Enero
+    - Estaria bien el [6](day) de Enero
+    - Estaria bien el [7](day) de Enero
+    - Estaria bien el [8](day) de Enero
+    - Estaria bien el [9](day) de Enero
+    - Estaria bien el [10](day) de Enero
+    - Estaria bien el [11](day) de Enero
+    - Estaria bien el [12](day) de Enero
+    - Estaria bien el [13](day) de Enero
+    - Estaria bien el [14](day) de Enero
+    - Estaria bien el [15](day) de Enero
+    - Estaria bien el [16](day) de Enero
+    - Estaria bien el [17](day) de Enero
+    - Estaria bien el [18](day) de Enero
+    - Estaria bien el [19](day) de Enero
+    - Estaria bien el [20](day) de Enero
+    - Estaria bien el [21](day) de Enero
+    - Estaria bien el [22](day) de Enero
+    - Estaria bien el [23](day) de Enero
+    - Estaria bien el [24](day) de Enero
+    - Estaria bien el [25](day) de Enero
+    - Estaria bien el [26](day) de Enero
+    - Estaria bien el [27](day) de Enero
+    - Estaria bien el [28](day) de Enero
+    - Estaria bien el [29](day) de Enero
+    - Estaria bien el [30](day) de Enero
+    - Estaria bien el [1](day) de Febrero
+    - Estaria bien el [2](day) de Febrero
+    - Estaria bien el [3](day) de Febrero
+    - Estaria bien el [4](day) de Febrero
+    - Estaria bien el [5](day) de Febrero
+    - Estaria bien el [6](day) de Febrero
+    - Estaria bien el [7](day) de Febrero
+    - Estaria bien el [8](day) de Febrero
+    - Estaria bien el [9](day) de Febrero
+    - Estaria bien el [10](day) de Febrero
+    - Estaria bien el [11](day) de Febrero
+    - Estaria bien el [12](day) de Febrero
+    - Estaria bien el [13](day) de Febrero
+    - Estaria bien el [14](day) de Febrero
+    - Estaria bien el [15](day) de Febrero
+    - Estaria bien el [16](day) de Febrero
+    - Estaria bien el [17](day) de Febrero
+    - Estaria bien el [18](day) de Febrero
+    - Estaria bien el [19](day) de Febrero
+    - Estaria bien el [20](day) de Febrero
+    - Estaria bien el [21](day) de Febrero
+    - Estaria bien el [22](day) de Febrero
+    - Estaria bien el [23](day) de Febrero
+    - Estaria bien el [24](day) de Febrero
+    - Estaria bien el [25](day) de Febrero
+    - Estaria bien el [26](day) de Febrero
+    - Estaria bien el [27](day) de Febrero
+    - Estaria bien el [28](day) de Febrero
+    - Estaria bien el [1](day) de Marzo
+    - Estaria bien el [2](day) de Marzo
+    - Estaria bien el [3](day) de Marzo
+    - Estaria bien el [4](day) de Marzo
+    - Estaria bien el [5](day) de Marzo
+    - Estaria bien el [6](day) de Marzo
+    - Estaria bien el [7](day) de Marzo
+    - Estaria bien el [8](day) de Marzo
+    - Estaria bien el [9](day) de Marzo
+    - Estaria bien el [10](day) de Marzo
+    - Estaria bien el [11](day) de Marzo
+    - Estaria bien el [12](day) de Marzo
+    - Estaria bien el [13](day) de Marzo
+    - Estaria bien el [14](day) de Marzo
+    - Estaria bien el [15](day) de Marzo
+    - Estaria bien el [16](day) de Marzo
+    - Estaria bien el [17](day) de Marzo
+    - Estaria bien el [18](day) de Marzo
+    - Estaria bien el [19](day) de Marzo
+    - Estaria bien el [20](day) de Marzo
+    - Estaria bien el [21](day) de Marzo
+    - Estaria bien el [22](day) de Marzo
+    - Estaria bien el [23](day) de Marzo
+    - Estaria bien el [24](day) de Marzo
+    - Estaria bien el [25](day) de Marzo
+    - Estaria bien el [26](day) de Marzo
+    - Estaria bien el [27](day) de Marzo
+    - Estaria bien el [28](day) de Marzo
+    - Estaria bien el [29](day) de Marzo
+    - Estaria bien el [30](day) de Marzo
+    - Estaria bien el [1](day) de Mayo
+    - Estaria bien el [2](day) de Mayo
+    - Estaria bien el [3](day) de Mayo
+    - Estaria bien el [4](day) de Mayo
+    - Estaria bien el [5](day) de Mayo
+    - Estaria bien el [6](day) de Mayo
+    - Estaria bien el [7](day) de Mayo
+    - Estaria bien el [8](day) de Mayo
+    - Estaria bien el [9](day) de Mayo
+    - Estaria bien el [10](day) de Mayo
+    - Estaria bien el [11](day) de Mayo
+    - Estaria bien el [12](day) de Mayo
+    - Estaria bien el [13](day) de Mayo
+    - Estaria bien el [14](day) de Mayo
+    - Estaria bien el [15](day) de Mayo
+    - Estaria bien el [16](day) de Mayo
+    - Estaria bien el [17](day) de Mayo
+    - Estaria bien el [18](day) de Mayo
+    - Estaria bien el [19](day) de Mayo
+    - Estaria bien el [20](day) de Mayo
+    - Estaria bien el [21](day) de Mayo
+    - Estaria bien el [22](day) de Mayo
+    - Estaria bien el [23](day) de Mayo
+    - Estaria bien el [24](day) de Mayo
+    - Estaria bien el [25](day) de Mayo
+    - Estaria bien el [26](day) de Mayo
+    - Estaria bien el [27](day) de Mayo
+    - Estaria bien el [28](day) de Mayo
+    - Estaria bien el [29](day) de Mayo
+    - Estaria bien el [30](day) de Mayo
+    - Estaria bien el [1](day) de Junio
+    - Estaria bien el [2](day) de Junio
+    - Estaria bien el [3](day) de Junio
+    - Estaria bien el [4](day) de Junio
+    - Estaria bien el [5](day) de Junio
+    - Estaria bien el [6](day) de Junio
+    - Estaria bien el [7](day) de Junio
+    - Estaria bien el [8](day) de Junio
+    - Estaria bien el [9](day) de Junio
+    - Estaria bien el [10](day) de Junio
+    - Estaria bien el [11](day) de Junio
+    - Estaria bien el [12](day) de Junio
+    - Estaria bien el [13](day) de Junio
+    - Estaria bien el [14](day) de Junio
+    - Estaria bien el [15](day) de Junio
+    - Estaria bien el [16](day) de Junio
+    - Estaria bien el [17](day) de Junio
+    - Estaria bien el [18](day) de Junio
+    - Estaria bien el [19](day) de Junio
+    - Estaria bien el [20](day) de Junio
+    - Estaria bien el [21](day) de Junio
+    - Estaria bien el [22](day) de Junio
+    - Estaria bien el [23](day) de Junio
+    - Estaria bien el [24](day) de Junio
+    - Estaria bien el [25](day) de Junio
+    - Estaria bien el [26](day) de Junio
+    - Estaria bien el [27](day) de Junio
+    - Estaria bien el [28](day) de Junio
+    - Estaria bien el [29](day) de Junio
+    - Estaria bien el [30](day) de Junio
+    - Estaria bien el [1](day) de Julio
+    - Estaria bien el [2](day) de Julio
+    - Estaria bien el [3](day) de Julio
+    - Estaria bien el [4](day) de Julio
+    - Estaria bien el [5](day) de Julio
+    - Estaria bien el [6](day) de Julio
+    - Estaria bien el [7](day) de Julio
+    - Estaria bien el [8](day) de Julio
+    - Estaria bien el [9](day) de Julio
+    - Estaria bien el [10](day) de Julio
+    - Estaria bien el [11](day) de Julio
+    - Estaria bien el [12](day) de Julio
+    - Estaria bien el [13](day) de Julio
+    - Estaria bien el [14](day) de Julio
+    - Estaria bien el [15](day) de Julio
+    - Estaria bien el [16](day) de Julio
+    - Estaria bien el [17](day) de Julio
+    - Estaria bien el [18](day) de Julio
+    - Estaria bien el [19](day) de Julio
+    - Estaria bien el [20](day) de Julio
+    - Estaria bien el [21](day) de Julio
+    - Estaria bien el [22](day) de Julio
+    - Estaria bien el [23](day) de Julio
+    - Estaria bien el [24](day) de Julio
+    - Estaria bien el [25](day) de Julio
+    - Estaria bien el [26](day) de Julio
+    - Estaria bien el [27](day) de Julio
+    - Estaria bien el [28](day) de Julio
+    - Estaria bien el [29](day) de Julio
+    - Estaria bien el [30](day) de Julio
+    - Estaria bien el [1](day) de Agosto
+    - Estaria bien el [2](day) de Agosto
+    - Estaria bien el [3](day) de Agosto
+    - Estaria bien el [4](day) de Agosto
+    - Estaria bien el [5](day) de Agosto
+    - Estaria bien el [6](day) de Agosto
+    - Estaria bien el [7](day) de Agosto
+    - Estaria bien el [8](day) de Agosto
+    - Estaria bien el [9](day) de Agosto
+    - Estaria bien el [10](day) de Agosto
+    - Estaria bien el [11](day) de Agosto
+    - Estaria bien el [12](day) de Agosto
+    - Estaria bien el [13](day) de Agosto
+    - Estaria bien el [14](day) de Agosto
+    - Estaria bien el [15](day) de Agosto
+    - Estaria bien el [16](day) de Agosto
+    - Estaria bien el [17](day) de Agosto
+    - Estaria bien el [18](day) de Agosto
+    - Estaria bien el [19](day) de Agosto
+    - Estaria bien el [20](day) de Agosto
+    - Estaria bien el [21](day) de Agosto
+    - Estaria bien el [22](day) de Agosto
+    - Estaria bien el [23](day) de Agosto
+    - Estaria bien el [24](day) de Agosto
+    - Estaria bien el [25](day) de Agosto
+    - Estaria bien el [26](day) de Agosto
+    - Estaria bien el [27](day) de Agosto
+    - Estaria bien el [28](day) de Agosto
+    - Estaria bien el [29](day) de Agosto
+    - Estaria bien el [30](day) de Agosto
+    - Estaria bien el [1](day) de Septiembre
+    - Estaria bien el [2](day) de Septiembre
+    - Estaria bien el [3](day) de Septiembre
+    - Estaria bien el [4](day) de Septiembre
+    - Estaria bien el [5](day) de Septiembre
+    - Estaria bien el [6](day) de Septiembre
+    - Estaria bien el [7](day) de Septiembre
+    - Estaria bien el [8](day) de Septiembre
+    - Estaria bien el [9](day) de Septiembre
+    - Estaria bien el [10](day) de Septiembre
+    - Estaria bien el [11](day) de Septiembre
+    - Estaria bien el [12](day) de Septiembre
+    - Estaria bien el [13](day) de Septiembre
+    - Estaria bien el [14](day) de Septiembre
+    - Estaria bien el [15](day) de Septiembre
+    - Estaria bien el [16](day) de Septiembre
+    - Estaria bien el [17](day) de Septiembre
+    - Estaria bien el [18](day) de Septiembre
+    - Estaria bien el [19](day) de Septiembre
+    - Estaria bien el [20](day) de Septiembre
+    - Estaria bien el [21](day) de Septiembre
+    - Estaria bien el [22](day) de Septiembre
+    - Estaria bien el [23](day) de Septiembre
+    - Estaria bien el [24](day) de Septiembre
+    - Estaria bien el [25](day) de Septiembre
+    - Estaria bien el [26](day) de Septiembre
+    - Estaria bien el [27](day) de Septiembre
+    - Estaria bien el [28](day) de Septiembre
+    - Estaria bien el [29](day) de Septiembre
+    - Estaria bien el [30](day) de Septiembre
+    - Estaria bien el [1](day) de Octubre
+    - Estaria bien el [2](day) de Octubre
+    - Estaria bien el [3](day) de Octubre
+    - Estaria bien el [4](day) de Octubre
+    - Estaria bien el [5](day) de Octubre
+    - Estaria bien el [6](day) de Octubre
+    - Estaria bien el [7](day) de Octubre
+    - Estaria bien el [8](day) de Octubre
+    - Estaria bien el [9](day) de Octubre
+    - Estaria bien el [10](day) de Octubre
+    - Estaria bien el [11](day) de Octubre
+    - Estaria bien el [12](day) de Octubre
+    - Estaria bien el [13](day) de Octubre
+    - Estaria bien el [14](day) de Octubre
+    - Estaria bien el [15](day) de Octubre
+    - Estaria bien el [16](day) de Octubre
+    - Estaria bien el [17](day) de Octubre
+    - Estaria bien el [18](day) de Octubre
+    - Estaria bien el [19](day) de Octubre
+    - Estaria bien el [20](day) de Octubre
+    - Estaria bien el [21](day) de Octubre
+    - Estaria bien el [22](day) de Octubre
+    - Estaria bien el [23](day) de Octubre
+    - Estaria bien el [24](day) de Octubre
+    - Estaria bien el [25](day) de Octubre
+    - Estaria bien el [26](day) de Octubre
+    - Estaria bien el [27](day) de Octubre
+    - Estaria bien el [28](day) de Octubre
+    - Estaria bien el [29](day) de Octubre
+    - Estaria bien el [30](day) de Octubre
+    - Estaria bien el [1](day) de Noviembre
+    - Estaria bien el [2](day) de Noviembre
+    - Estaria bien el [3](day) de Noviembre
+    - Estaria bien el [4](day) de Noviembre
+    - Estaria bien el [5](day) de Noviembre
+    - Estaria bien el [6](day) de Noviembre
+    - Estaria bien el [7](day) de Noviembre
+    - Estaria bien el [8](day) de Noviembre
+    - Estaria bien el [9](day) de Noviembre
+    - Estaria bien el [10](day) de Noviembre
+    - Estaria bien el [11](day) de Noviembre
+    - Estaria bien el [12](day) de Noviembre
+    - Estaria bien el [13](day) de Noviembre
+    - Estaria bien el [14](day) de Noviembre
+    - Estaria bien el [15](day) de Noviembre
+    - Estaria bien el [16](day) de Noviembre
+    - Estaria bien el [17](day) de Noviembre
+    - Estaria bien el [18](day) de Noviembre
+    - Estaria bien el [19](day) de Noviembre
+    - Estaria bien el [20](day) de Noviembre
+    - Estaria bien el [21](day) de Noviembre
+    - Estaria bien el [22](day) de Noviembre
+    - Estaria bien el [23](day) de Noviembre
+    - Estaria bien el [24](day) de Noviembre
+    - Estaria bien el [25](day) de Noviembre
+    - Estaria bien el [26](day) de Noviembre
+    - Estaria bien el [27](day) de Noviembre
+    - Estaria bien el [28](day) de Noviembre
+    - Estaria bien el [29](day) de Noviembre
+    - Estaria bien el [30](day) de Noviembre
+    - Estaria bien el [1](day) de Diciembre
+    - Estaria bien el [2](day) de Diciembre
+    - Estaria bien el [3](day) de Diciembre
+    - Estaria bien el [4](day) de Diciembre
+    - Estaria bien el [5](day) de Diciembre
+    - Estaria bien el [6](day) de Diciembre
+    - Estaria bien el [7](day) de Diciembre
+    - Estaria bien el [8](day) de Diciembre
+    - Estaria bien el [9](day) de Diciembre
+    - Estaria bien el [10](day) de Diciembre
+    - Estaria bien el [11](day) de Diciembre
+    - Estaria bien el [12](day) de Diciembre
+    - Estaria bien el [13](day) de Diciembre
+    - Estaria bien el [14](day) de Diciembre
+    - Estaria bien el [15](day) de Diciembre
+    - Estaria bien el [16](day) de Diciembre
+    - Estaria bien el [17](day) de Diciembre
+    - Estaria bien el [18](day) de Diciembre
+    - Estaria bien el [19](day) de Diciembre
+    - Estaria bien el [20](day) de Diciembre
+    - Estaria bien el [21](day) de Diciembre
+    - Estaria bien el [22](day) de Diciembre
+    - Estaria bien el [23](day) de Diciembre
+    - Estaria bien el [24](day) de Diciembre
+    - Estaria bien el [25](day) de Diciembre
+    - Estaria bien el [26](day) de Diciembre
+    - Estaria bien el [27](day) de Diciembre
+    - Estaria bien el [28](day) de Diciembre
+    - Estaria bien el [29](day) de Diciembre
+    - Estaria bien el [30](day) de Diciembre
+    
+
 
 
 
@@ -135,7 +499,24 @@ nlu:
 
 - intent: inform_dniuser
   examples: |
-    - Mi identificacion es (1214746404)[dniuser]
-    - Mi numero de identificacion es (745221087)[dniuser]
-    - Mi identificacion es (2565781580)[dniuser]     
+    - Mi identificacion es [1214746404](dni_user)
+    - Mi numero de identificacion es [745221087](dni_user)
+    - Mi identificacion es [2565781580][dni_user)  
+    - [4165456465](dni_user)
+    
+
+- intent: request_cancel
+  examples: |
+    - Necesito cancelar mi cita de (Especialidad)
+    - Me ayuda cancelando mi cita que tengo para el día (fecha)
+    - ¿Cómo puedo cancelar una cita de (Especialidad)?
+    - Cancele mi cita de (Especialidad)
+    - No puedo asistir a mi cita del (fecha), ¿La podríamos cancelar por favor?
+    - Tengo un tema personal y no puedo asistir a mi cita, ¿Me la puede cancelar por favor?
+    - Tengo un problema del trabajo y no puedo asistir a mi cita, ¿Me puede colaborar cancelándola?
+    - No puedo asistir a mi cita, cancélela por favor
+    - Necesito cancelar una cita su ayuda por favor
+    - No me sirve la fecha en que me asignaron la cita, cancélela por favor
+    - Señorita cancele mi cita por favor
+    - Me asignaron una cita incorrecta, ¿La puede cancelar por favor?
 
