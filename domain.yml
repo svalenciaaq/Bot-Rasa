@@ -4,13 +4,15 @@ intents:
   - saludo
   - despido
   - Afirmacion
-  - dia_cita
-  - hora_cita
+  - inform_day
+  - inform_hour
   - request_cita
   - Despido
   - inform_username
   - inform_dniuser
-
+  - inform_month
+  - request_cancel
+  - inform_botname
 
 actions:
   - response_action
@@ -18,6 +20,8 @@ actions:
   - action_ask_month
   - action_ask_day
   - action_ask_hour
+  - action_inform_form
+
 
 entities:
   - date
@@ -29,7 +33,7 @@ entities:
   - hour
   - username
   - dni_user
-  - month_date
+  - month
 
 slots:
   username:
@@ -37,21 +41,27 @@ slots:
     influence_conversation: false
   dniuser: 
     type: text
+    auto_fill: false
     influence_conversation: false
   day: 
     type: text
+    auto_fill: false
     influence_conversation: false
   hour: 
     type: text
+    auto_fill: false
     influence_conversation: false
   doctor:
     type: text
+    auto_fill: false
     influence_conversation: false
   site:
     type: text
+    auto_fill: false
     influence_conversation: False
   month:
     type: text
+    auto_fill: false
     influence_conversation: False
                 
 
@@ -65,7 +75,6 @@ responses:
 
   utter_hora_cita:
   - text: "A que hora quisiera agendarla"
-
 
   utter_please_rephrase:
   - text: "Lo siento, no entendi lo que dijistes. Podrias repetirlo?"
@@ -83,7 +92,12 @@ responses:
   - text: "Esta bien, Gracias"
 
   utter_slots_values:
-  - text: "Te recordare tu nombre es {username}"
+  - text: "La cita al usuario con dni {dni_user} , en el mes {month}, en el dia {day} , en la hora {hour}"
+
+  utter_botname:
+  - text: "Me llamo alicia"
+  - text: "Puedes llamarme alicia"
+  - text: ""
 
 session_config:
   session_expiration_time: 60
@@ -97,13 +111,16 @@ forms:
         intent:  [inform_dniuser]
     month:
       - type: from_entity
-        entity: month_date   
+        entity: month  
+        intent: [inform_month]
     day:
       - type: from_entity
         entity: day
+        intent: [inform_day]
     hour:
       - type: from_entity
         entity: hour
+        intent: [inform_hour]
 
 
      
