@@ -185,3 +185,9 @@ nlu:
     - Quiero saber como te llamas?
     - Como es tu nombre
     - me prodias decir tu nombre
+
+- intent: request_citacercana
+  examples: |
+    - Puedes darme la cita mas cercana posible porfavor
+    - Cuando esta disponible una cita 
+    - Podrias decirme cuando es la cita mas cercana

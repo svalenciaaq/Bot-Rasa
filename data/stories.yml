@@ -13,6 +13,14 @@ stories:
   - intent: inform_botname
   - action: utter_botname  
 
+
+
+
+- story: informo cita cercana 
+  steps:
+  - intent:  request_citacercana
+  - action:  action_citacercana
+
 # - story: cita_request
 #   steps:
 #   - intent: saludo

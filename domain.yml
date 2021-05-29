@@ -13,6 +13,7 @@ intents:
   - inform_month
   - request_cancel
   - inform_botname
+  - request_citacercana
 
 actions:
   - response_action
@@ -21,6 +22,7 @@ actions:
   - action_ask_day
   - action_ask_hour
   - action_inform_form
+  - action_citacercana
 
 
 entities:

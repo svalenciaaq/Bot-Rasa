@@ -6,7 +6,7 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
-import pymongo
+
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -14,9 +14,9 @@ from rasa_sdk.events import SlotSet
 import json
 import requests
 
-url ="http://7gqvd.mocklab.io/"
+url ="http://localhost:1337/"
 rutepost = "json"
-ruteget = ""
+ruteget = "appointments"
 
 class ActionHelloWorld(Action):
 
@@ -194,6 +194,31 @@ class ActionInformForm(Action):
         dispatcher.utter_message(text="xddd")
 
         return []
+
+
+     
+
+
+class ActionRequestCitaCercana(Action):
+
+    def name(self) -> Text:
+        return "action_citacercana"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+      
+
+
+        response =  requests.get(url + ruteget)
+
+
+        print(response.text)
+
+        dispatcher.utter_message(text="Es estas")
+        return []
+
 
 # class Database(object):
 #     URI = "mongodb://127.0.0.1:27017"
