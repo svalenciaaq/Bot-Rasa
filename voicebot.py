@@ -15,7 +15,7 @@ import os
 bot_message = ""
 message=""
 
-r = requests.post('http://localhost:5005/webhooks/rest/webhook', json={"message": "Hola"})
+r = requests.post('http://54.86.161.133:5005/webhooks/rest/webhook', json={"message": "Hola"})
 
 print("Bot says, ",end=' ')
 for i in r.json():
@@ -48,7 +48,7 @@ while bot_message != "Bye" or bot_message!='thanks':
 
     
 
-    r = requests.post('http://localhost:5005/webhooks/rest/webhook', json={
+    r = requests.post('http://54.86.161.133:5005/webhooks/rest/webhook', json={
      "sender": "user_x",
     "message": message})
 
