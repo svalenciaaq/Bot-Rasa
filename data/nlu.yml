@@ -13,6 +13,7 @@ nlu:
     - Buenos dias
     - Buenas tardes
     - Buenas noches
+    - Buenas 
 
     
 - intent: request_cita
@@ -39,6 +40,9 @@ nlu:
     - Me indicaron que por este medio puedo solicitar mis citas médicas, ¿Es verdad?
     - ¿Cómo es el proceso para solicitar citas por este medio?
     - Una cita médica por favor
+    - Quisiera agendar una cita médica
+    - Para pedir una cita médica porfavor
+
 
 
 - intent: inform_month
@@ -55,30 +59,30 @@ nlu:
     - Quisiera la cita en [octubre](month)
     - Quisiera la cita en [noviembre](month)
     - Quisiera la cita en [diciembre](month)
-    - [Enero](month)
-    - [Febrero](month)
-    - [Marzo](month)
-    - [Abril](month)
-    - [Mayo](month)
-    - [Junio](month)
-    - [Julio](month)
-    - [Agosto](month)
-    - [Septiembre](month)
-    - [Octubre](month)
-    - [Noviembre](month)
-    - [Deciembre](month)
-    - En el mes de [Enero](month) estaria bien.
-    - En el mes de [Febrero](month) estaria bien.
-    - En el mes de [Marzo](month) estaria bien.
-    - En el mes de [Abril](month) estaria bien.
-    - En el mes de [Mayo](month) estaria bien.
-    - En el mes de [Junio](month) estaria bien.
-    - En el mes de [Julio](month) estaria bien.
-    - En el mes de [Agosto](month) estaria bien.
-    - En el mes de [Septiembre](month) estaria bien.
-    - En el mes de [Octubre](month) estaria bien.
-    - En el mes de [Noviembre](month) estaria bien.
-    - En el mes de [Deciembre](month) estaria bien.
+    - [enero](month)
+    - [febrero](month)
+    - [marzo](month)
+    - [abril](month)
+    - [mayo](month)
+    - [junio](month)
+    - [julio](month)
+    - [agosto](month)
+    - [septiembre](month)
+    - [octubre](month)
+    - [noviembre](month)
+    - [deciembre](month)
+    - En el mes de [enero](month) estaria bien.
+    - En el mes de [febrero](month) estaria bien.
+    - En el mes de [marzo](month) estaria bien.
+    - En el mes de [abril](month) estaria bien.
+    - En el mes de [mayo](month) estaria bien.
+    - En el mes de [junio](month) estaria bien.
+    - En el mes de [julio](month) estaria bien.
+    - En el mes de [agosto](month) estaria bien.
+    - En el mes de [septiembre](month) estaria bien.
+    - En el mes de [octubre](month) estaria bien.
+    - En el mes de [noviembre](month) estaria bien.
+    - En el mes de [deciembre](month) estaria bien.
     
 
 - intent: inform_day
@@ -133,14 +137,29 @@ nlu:
     - estaria bien a las (10)[hour] de la mañana
     - estaria bien a las (11)[hour] de la mañana
     - estaria bien a las (12)[hour] de la tarde
-    
+    - [1 y 30](hour) de la tarde
+    - [2 y 30](hour) de la tarde
+    - [3 y 30](hour) de la tarde
+    - [4 y 30](hour) de la tarde
+    - [5 y 30](hour) de la tarde
+    - [12 y 30](hour) de la tarde
+    - [11 y 30](hour) de la mañana
+    - [10 y 30](hour) de la mañana
+    - [9 y 30](hour) de la mañana
+    - [8 y 30](hour) de la mañana
+    - [7 y 30](hour) de la mañana
+    - [6 y 30](hour) de la mañana
+    - estaria bien a las (9 y 30)[hour] de la mañana
+    - estaria bien a las (10 y 30)[hour] de la mañana
+    - estaria bien a las (11 y 30)[hour] de la mañana
+    - estaria bien a las (12 y 30)[hour] de la tarde
+
 - intent: Despido
   examples: |
     - Muchas gracias, hasta luego
     - Gracias, Hasta luego
     - Adios, Muchas gracias
     - Muy amable, Hasta luego
-
 
 
 - intent: Afirmacion
@@ -150,16 +169,19 @@ nlu:
     - Si
 
 
-
-    
-
 - intent: inform_dniuser
   examples: |
     - Mi identificacion es [1214746404](dni_user)
+    - Mi identificacion es [12147 46404](dni_user)
+    - Mi identificacion es [12 147 46404](dni_user)
     - Mi numero de identificacion es [745221087](dni_user)
+    - Mi numero de identificacion es [74522 1087](dni_user)
     - Mi identificacion es [2565781580][dni_user)  
     - [4165456465](dni_user)
     - [1214746404](dni_user)
+    - [12147 46404](dni_user)
+    - [12 147 46 404](dni_user)
+    - [12 147 46404](dni_user)
     
 
 - intent: request_cancel
@@ -191,3 +213,44 @@ nlu:
     - Puedes darme la cita mas cercana posible porfavor
     - Cuando esta disponible una cita 
     - Podrias decirme cuando es la cita mas cercana
+
+
+- intent: request_cita_date
+  examples: |
+    - Puedes decirme la disponibilidad de las citas del [01](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [02](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [03](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [04](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [05](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [06](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [07](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [08](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [09](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [10](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [11](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [12](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [13](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [14](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [15](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [16](day_request) de [abril](month_request)
+    - Puedes decirme la disponibilidad de las citas del [17](day_request) de [abril](month_request)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-POST http://localhost:5005/webhooks/rest/webhook HTTP/1.1
+POST http://54.86.161.133:5005/webhooks/rest/webhook HTTP/1.1
 Content-Type: application/json
 
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 
 {
      "sender": "user_s",
-    "message": "Martes"
+    "message": "Estaria  bien el 25"
 }
 
 
@@ -92,4 +92,30 @@ Content-Type: application/json
 {
      "sender": "user_s",
     "message": "Puedes darme la cita mas cercana posible porfavor"
+}
+
+
+
+###
+POST http://localhost:1337/appointments HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "name_user": "Ricardo",
+    "appointment_type": "Cita Medica",
+    "appointment_with": "Carlos",
+    "datetime": "2021-05-19T23:30:00.000Z",
+    "hours": [{"client_name": "Alberto","available":true,  "time":"00:30:00"} ]
+}
+
+
+###
+POST http://localhost:5005/webhooks/rest/webhook HTTP/1.1
+Content-Type: application/json;charset=utf-8
+
+
+{
+     "sender": "user_s",
+    "message": "Puedes decirme la disponibilidad de las citas del 25 de abril"
 }

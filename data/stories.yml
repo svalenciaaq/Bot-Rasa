@@ -21,6 +21,16 @@ stories:
   - intent:  request_citacercana
   - action:  action_citacercana
 
+
+
+
+- story: informo cita especifica
+  steps:
+  - intent: request_cita_date
+  - action: action_cita_especifica    
+
+
+
 # - story: cita_request
 #   steps:
 #   - intent: saludo

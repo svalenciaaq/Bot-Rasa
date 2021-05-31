@@ -14,6 +14,9 @@ intents:
   - request_cancel
   - inform_botname
   - request_citacercana
+  - request_cita_date
+
+
 
 actions:
   - response_action
@@ -23,6 +26,8 @@ actions:
   - action_ask_hour
   - action_inform_form
   - action_citacercana
+  - validate_cita_form
+  - action_cita_especifica
 
 
 entities:
@@ -36,12 +41,14 @@ entities:
   - username
   - dni_user
   - month
+  - day_request
+  - month_request
 
 slots:
   username:
     type: text
     influence_conversation: false
-  dniuser: 
+  dni_user: 
     type: text
     auto_fill: false
     influence_conversation: false
@@ -101,13 +108,15 @@ responses:
   - text: "Puedes llamarme alicia"
   - text: ""
 
+  utter_ask_dni_user:
+  - text: "Me podrias dar tu numero de identificacion"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 
 forms:
   cita_form:
-    dniuser:
+    dni_user:
       - type: from_entity
         entity: dni_user
         intent:  [inform_dniuser]

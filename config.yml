@@ -11,19 +11,20 @@ pipeline:
 - name: "LexicalSyntacticFeaturizer"
 - name: "CRFEntityExtractor"
 - name: "EntitySynonymMapper"
+- name: RegexEntityExtractor
 - name: "CountVectorsFeaturizer"
 - name: "CountVectorsFeaturizer"
   analyzer: char_wb
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 100
+  epochs: 200
   model_confidence: linear_norm
   constrain_similarities: True
 - name: ResponseSelector
-  epochs: 100
+  epochs: 200
 - name: FallbackClassifier
-  threshold: 0.3
+  threshold: 0.5
   ambiguity_threshold: 0.1
 
 

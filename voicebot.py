@@ -45,6 +45,9 @@ while bot_message != "Bye" or bot_message!='thanks':
         continue
     print("Sending message now...")
 
+
+    
+
     r = requests.post('http://localhost:5005/webhooks/rest/webhook', json={
      "sender": "user_x",
     "message": message})
