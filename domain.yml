@@ -110,7 +110,7 @@ responses:
   - text: ""
 
   utter_ask_dni_user:
-  - text: "Me podrias dar tu numero de identificacion"
+  - text: "Me podrias dar tu numero de identificacion, el numero de identificacion debe estar registrado en el sistema"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

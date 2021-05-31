@@ -43,7 +43,7 @@ class Actionrecievedni(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        dispatcher.utter_message(text="Cual es tu numero de identificacion")
+        dispatcher.utter_message(text="Cual es tu numero de identificación")
       
         return []
 
@@ -57,7 +57,7 @@ class ActionReceiveDay(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        dispatcher.utter_message(text="Que dia quisiera la cita")
+        dispatcher.utter_message(text="Que día quisiera la cita")
       
         return []
 
@@ -432,37 +432,37 @@ class ActionRequestCitaEspecifica(Action):
             if horarios[b] == "11:30:00.000":
                 textr+= "11 y 30 de la mañana, "
             if horarios[b] == "12:00:00.000":
-                textr+= "12 de la mañana, "
+                textr+= "12 de la tarde, "
             if horarios[b] == "12:30:00.000":
-                textr+= "12 y 30 de la mañana, "
+                textr+= "12 y 30 de la tarde, "
             if horarios[b] == "13:00:00.000":
-                textr+= "13 de la mañana, "
+                textr+= "13 de la tarde, "
             if horarios[b] == "13:30:00.000":
-                textr+= "13 y 30 de la mañana, "
+                textr+= "13 y 30 de la tarde, "
             if horarios[b] == "14:00:00.000":
-                textr+= "14 de la mañana, "
+                textr+= "14 de la tarde, "
             if horarios[b] == "14:30:00.000":
-                textr+= "14 y 30 de la mañana, "
+                textr+= "14 y 30 de la tarde, "
             if horarios[b] == "15:00:00.000":
-                textr+= "15 de la mañana, "
+                textr+= "15 de la tarde, "
             if horarios[b] == "15:30:00.000":
-                textr+= "15 y 30 de la mañana, "
+                textr+= "15 y 30 de la tarde, "
 
 
             if horarios[b] == "16:00:00.000":
-                textr+= "16 de la mañana, "
+                textr+= "16 de la tarde, "
             if horarios[b] == "16:30:00.000":
-                textr+= "16 y 30 de la mañana, "
+                textr+= "16 y 30 de la tarde, "
 
             if horarios[b] == "17:00:00.000":
-                textr+= "17 de la mañana, "
+                textr+= "17 de la tarde, "
             if horarios[b] == "17:30:00.000":
-                textr+= "17 y 30 de la mañana, " 
+                textr+= "17 y 30 de la tarde, " 
 
             if horarios[b] == "18:00:00.000":
-                textr+= "18 de la mañana, "
+                textr+= "18 de la tarde, "
             if horarios[b] == "18:30:00.000":
-                textr+= "18 y 30 de la mañana, "     
+                textr+= "18 y 30 de la tarde, "     
 
             
 
@@ -514,7 +514,7 @@ class ValidateCitaForm(FormValidationAction):
 
         if check == False:
 
-            dispatcher.utter_message(text=f"That's a very short name. I'm assuming you mis-spelled.")
+            dispatcher.utter_message(text=f"Esa identificacion no esta registrada en el sistema, porfavor ingrese una nueva")
             return {"dni_user": None}
         else:
             return {"dni_user": slot_value}
