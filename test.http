@@ -41,7 +41,7 @@ Content-Type: application/json
 
 {
      "sender": "user_s",
-    "message": "enero"
+    "message": "julio"
 }
 
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 
 {
      "sender": "user_s",
-    "message": "Estaria  bien el 25"
+    "message": "Estaria  bien el 14"
 }
 
 
@@ -65,7 +65,7 @@ Content-Type: application/json
 
 {
      "sender": "user_s",
-    "message": "1:30 de la tarde"
+    "message": "8 de la mañana"
 }
 
 

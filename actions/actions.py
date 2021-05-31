@@ -183,7 +183,7 @@ class ActionInformForm(Action):
         month1 = int(month)
         day1 =  int(day)
 
-        date = datetime.datetime(year1, month1, day1 , 1).isoformat()
+        date = datetime.datetime(year1, month1, day1 , 8).isoformat()
 
 
         if isinstance(hour, str):
