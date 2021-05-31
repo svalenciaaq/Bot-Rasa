@@ -70,17 +70,6 @@ class ActionReceiveHour(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        slot =  tracker.get_slot("day")
-
-
-        day  = slot[0]
-     
-
-
-
-        dispatcher.utter_message(text="El dia que elegiste:" + day )
-
-        dispatcher.utter_message(text="Los horarios disponibles son:" + "12:00" + "13:00" + "15:00")
 
         dispatcher.utter_message(text="Que hora quisiera su cita")
       
@@ -96,22 +85,7 @@ class ActionReceiveMonth(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        # slot = tracker.get_slot("dniuser")
-
-        # dni= int(slot[0])
-
-        # query ={
-        #     "dni_user" : dni
-        # }
-
-        # response =  requests.post(url + rutepost , query)
-
-        # if response.status_code == 200:
-        #     print("success")
-        # elif response.status_code == 404:
-        #     print("Not found")
-
-        username = "Santiago"
+    
      
         dispatcher.utter_message(text="Que mes quisiera la cita")
 
@@ -136,7 +110,7 @@ class ActionInformForm(Action):
         slot =  tracker.get_slot("month")
         monthe =  slot[0].lower()
 
-        print(slot)
+      
 
         slot2 = tracker.get_slot("day")
 
@@ -146,7 +120,12 @@ class ActionInformForm(Action):
         
         month = None
 
-        hour = slot3[0]
+        if isinstance(slot3, str):
+            hour = slot3.replace(' ','').split(":")
+        else:
+            hour =  slot3[0].replace(' ','')
+
+        
 
 
         slot4 =  tracker.get_slot("dni_user")
@@ -155,14 +134,18 @@ class ActionInformForm(Action):
 
         year = "2021"
 
+        entities =  tracker.latest_message['entities']
 
+        for e in entities:
+            if e['entity'] == 'timer':
+                timer =  e['value']
 
         if isinstance(slot, str):
             monthe =  slot
-            print(monthe)
+           
         else:
             monthe =  slot[0].lower()
-            print(monthe)
+          
            
 
         print(monthe)
@@ -191,19 +174,30 @@ class ActionInformForm(Action):
         elif monthe == "diciembre":
             month = "12"                  
  
-        
+        if timer == "tarde":
+            print("Hora que creo",hour)   
+
+
 
         year1 = int(year)
         month1 = int(month)
         day1 =  int(day)
-        hour1 = int(hour)
 
-        date = datetime.datetime(year1, month1,day1).isoformat()
+        date = datetime.datetime(year1, month1, day1 , 1).isoformat()
 
-        time = datetime.time(1)
-        time1 =  str(time)
 
-        r  = requests.get('http://localhost:1337/users')
+        if isinstance(hour, str):
+            hour1 = int(hour)
+            time = datetime.time(hour1)
+            time1 =  str(time)
+        else:
+            time = datetime.time(int(hour[0]), int(hour[1]))
+            time1 =  str(time)
+           
+    
+
+
+        r  = requests.get('https://appointments-carvajal.herokuapp.com/users')
 
         data =  r.json()
         username = ""
@@ -211,31 +205,19 @@ class ActionInformForm(Action):
 
         if isinstance(slot4, str):
             dni = slot_value.replace(' ','')
-            print(dni)
         else:
             dni =  slot4[0].replace(' ','')
-            print(dni)
+   
 
         for i in range(len(data)):
             x = data[i]
-            print(x["dni"])
-            print(dni)
             if dni == x["dni"]:
                 username = x["name"]
 
-        print(username)       
-
-        # data = {
-        #     "name_user":,
-        #     "appointment_type",
-        #     "appointment_with",
-        #     "datetime": date,
-        #     "hours":[{"client_name":,"available":false, "time":}]
-        # }
-
+      
         data = {
             "appointment_type": "Cita Medica",
-            "appointment_with": "Carlos",
+            "appoinment_with": "Carlos",
             "datetime": date,
             "hours": [{"client_name": username,"available":False,  "time":time1} ]
 }
@@ -245,7 +227,7 @@ class ActionInformForm(Action):
     
         headers = {'content-type' : 'application/json'}
         try:
-            r = requests.post("http://localhost:1337/appointments",headers=headers ,data = send)
+            r = requests.post("https://appointments-carvajal.herokuapp.com/appointments",headers=headers ,data = send)
             r.raise_for_status()
         except requests.exceptions.HTTPError as err:
             raise SystemExit(err)
@@ -272,7 +254,7 @@ class ActionRequestCitaCercana(Action):
          "14:00:00.000", "15:00:00.000", "16:00:00.000", "17:00:00.000", "18:00:00.000","6:30:00.000", "7:30:00.000","8:30:00.000","9:30:00.000",
          "10:30:00.000","11:30:00.000","12:30:00.000","13:30:00.000","14:30:00.000","15:30:00.000","16:30:00.000","17:30:00.000", "18:30:00.000"]
         try:
-            r  = requests.get('http://localhost:1337/appointments')
+            r  = requests.get('https://appointments-carvajal.herokuapp.com/appointments')
             r.raise_for_status()
         except requests.exceptions.HTTPError as err:
             raise SystemExit(err)
@@ -284,7 +266,6 @@ class ActionRequestCitaCercana(Action):
         m =  l[2]
         t = (m.split("T"))[0]
         
-        print(t)
 
         for i in range(len(data)):
             x = data[i]
@@ -329,7 +310,7 @@ class ActionRequestCitaEspecifica(Action):
 
 
         entities =  tracker.latest_message['entities']
-
+        monthe= ""
         for e in entities:
             if e['entity'] == 'day_request':
                 day =  e['value']
@@ -373,7 +354,7 @@ class ActionRequestCitaEspecifica(Action):
 
 
         try:
-            r  = requests.get('http://localhost:1337/appointments')
+            r  = requests.get('https://appointments-carvajal.herokuapp.com/appointments')
             r.raise_for_status()
         except requests.exceptions.HTTPError as err:
             raise SystemExit(err)
@@ -389,7 +370,7 @@ class ActionRequestCitaEspecifica(Action):
 
 
 
-        print(horarios)
+ 
         
         
         
@@ -417,7 +398,7 @@ class ActionRequestCitaEspecifica(Action):
             p =  len(horarios)
 
             if k ==  month and t  == day:
-                print("entre")
+         
                 for j in range(p):
 
                     if time == horarios[j]:
@@ -485,7 +466,7 @@ class ActionRequestCitaEspecifica(Action):
 
             
 
-        print(textr)
+     
         dispatcher.utter_message(text=textr)
         return []
 
@@ -512,26 +493,23 @@ class ValidateCitaForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `first_name` value."""
     
-        r  = requests.get('http://localhost:1337/users')
+        r  = requests.get('https://appointments-carvajal.herokuapp.com/users')
 
         data =  r.json()
         check = False
         dni = ""
         if isinstance(slot_value, str):
             dni = slot_value.replace(' ','')
-            print(dni)
+        
         else:
             dni =  slot_value[0].replace(' ','')
-            print(dni)
+          
     
         # print(dni)
         for i in range(len(data)):
             x = data[i]
             if dni == x["dni"]:
-                print(slot_value)
-                print(type(slot_value))
-                print(x["dni"])
-                print(type(x["dni"]))
+              
                 check = True    
 
         if check == False:

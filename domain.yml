@@ -43,6 +43,7 @@ entities:
   - month
   - day_request
   - month_request
+  - timer
 
 slots:
   username:
